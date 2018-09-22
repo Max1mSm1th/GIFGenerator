@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;  
+    background-image: url("https://www.astralbodytravel.com/wp-content/uploads/2016/01/color-blurry-background.jpg")
+}
+
+h1 {
+    color: #c1d1d9;
+    font-size: .75in;
+    padding: 0px 0px 0px 40px;
+}
+
+.expression-btn {
+    background-color: #95959D;
+    margin: 0px 15px 0px 0px;
+    border-width: 0px;
+    color: white;
+    padding: 8px;
+    font-size: .15in;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#buttons-view {
+    margin: 0px 0px 0px 40px;
+}
+
+#add-expression {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    padding: 8px;
+    font-size: .15in;
+    margin: 15px 0px 0px 40px;
+}
+
+#expression-input {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    padding: 8px;
+    font-size: .15in;
+    margin: 0px 0px 20px 0px;
+}
+
+img {
+    margin: 40px 30px 20px 40px;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    border-width: 2px;
+    font-size: .15in;
+    height: 150px;
+    width: 250px;
+}
+
+img:hover {
+    margin: 40px 30px 20px 40px;
+    float: left;
+    box-shadow: 0;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    border-width: 2px;
+    font-size: .15in;
+    height: 150px;
+    width: 250px;
+}

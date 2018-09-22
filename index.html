@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>REACTION GIFs</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <h1>REACTION GIFs</h1>
+    <div id="buttons-view"></div>
+    <form id="expression-form">
+        <input id="add-expression" type="submit" value="search">
+        <input type="text" id="expression-input">
+    </form>
+    <div id="expressions-view"></div>
+
+<script type="text/javascript">
+
+    var expressions = ["sad", "happy", "hug", "punch", "laugh", "smile"];
+
+    function displayExpression() {
+
+    var reactions = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=uuuYHsTptz2PNlKFPa7DUwYZXBEeTI1N&q=" + reactions + "&limit=15&offset=0&rating=G&lang=en";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+            
+        var results = response.data;
+
+        for (var i = 0; i < results.length; i++) {
+                var expressionDiv = $("<div>");
+                var image = $("<img>");
+            image.attr("src", results[i].images.fixed_height.url);
+            expressionDiv.append(image);
+
+            $("#expressions-view").prepend(expressionDiv);
+        }
+    });
+    
+    $("#expressions-view").empty();
+
+    }
+
+    function renderButtons() { 
+        
+        $("#buttons-view").empty();
+
+        for (var i = 0; i < expressions.length; i++) {
+
+            var a = $("<button>");
+            a.addClass("expression-btn");
+            a.attr("data-name", expressions[i]);
+            a.text(expressions[i]);
+            $("#buttons-view").append(a);
+        }
+    }
+
+    $("#add-expression").on("click", function(event) {
+
+        event.preventDefault();
+            var expression = $("#expression-input").val().trim();
+            expressions.push(expression);
+        renderButtons();
+
+    });
+
+    $(document).on("click", ".expression-btn", displayExpression);
+
+    renderButtons();
+
+</script>   
+</body>
+</html>
